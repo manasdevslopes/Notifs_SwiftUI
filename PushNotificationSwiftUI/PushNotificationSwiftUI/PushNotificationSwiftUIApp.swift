@@ -10,7 +10,7 @@
     
 /*
  Notes: -
- 1. First Add Firebase SPM and select Firebase Analytics and Firebase Messaging
+ 1. First Add Firebase SPM and select Firebase Analytics and Firebase Messaging. Also add this project in Firebase and download Google Info.plist file andd ad it here in the project.
  Link - https://github.com/firebase/firebase-ios-sdk.git
  2. Also Apple Developer Program should be enabled $99
  3. From the account (developer.apple.com/account), click on Certificates, Identifiers and Profile tab, and then navigate to Keys. Click on + sign and then add Key Name(any name). Then enable Apple Push Notification service (APNs). Remember we have only 2 APNs keys per Apple Developer Team.
