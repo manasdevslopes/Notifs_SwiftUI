@@ -62,6 +62,7 @@ class AppDelete: NSObject, UIApplicationDelegate {
     return true
   }
   
+  /* This Handles Notifications in Background */
   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
     if let messageID = userInfo[gcmMessageIDKey] {
       print("Message ID: \(messageID)")
@@ -83,6 +84,7 @@ class AppDelete: NSObject, UIApplicationDelegate {
 @available(iOS 10.0, *)
 extension AppDelete: UNUserNotificationCenterDelegate {
   // Receive displayed Notifications for iOS 10.0 devices
+  /* This Handles Notifications in foreground */
   func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
     let userInfo = notification.request.content.userInfo
     
@@ -99,6 +101,7 @@ extension AppDelete: UNUserNotificationCenterDelegate {
   
   func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: any Error) { }
   
+  /* This Handles Notifications when tapped */
   func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
     let userInfo = response.notification.request.content.userInfo
     
